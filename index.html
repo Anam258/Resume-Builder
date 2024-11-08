@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Resume Builder</h1>
+      <form id="resume-form">
+        <section>
+          <label for="name"><i class="fas fa-user"></i> Name:</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Please Enter Your Name"
+            oninput="validateName()"
+          />
+          <span id="name-error" class="error-message"></span>
+        </section>
+        <section>
+          <label for="designation"
+            ><i class="fas fa-briefcase"></i> Designation:</label
+          >
+          <input
+            type="text"
+            id="designation"
+            placeholder="i.e Developer, Teacher, Accountant"
+          />
+        </section>
+        <section>
+          <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            oninput="validateEmail()"
+          />
+          <span id="email-error" class="error-message"></span>
+        </section>
+        <section>
+          <label for="contact"
+            ><i class="fas fa-phone-alt"></i> Contact Number:</label
+          >
+          <input
+            type="text"
+            id="contact"
+            placeholder="Your Contact Number"
+            oninput="validateContact()"
+          />
+          <span id="contact-error" class="error-message"></span>
+        </section>
+        <section>
+          <label for="address"
+            ><i class="fas fa-map-marker-alt"></i> Address:</label
+          >
+          <input type="text" id="address" placeholder="Your Address" />
+        </section>
+        <section>
+          <label for="about"
+            ><i class="fas fa-user-circle"></i> About Me:</label
+          >
+          <textarea id="about" placeholder="Tell us about yourself"></textarea>
+        </section>
+        <section>
+          <label for="skills"
+            ><i class="fas fa-tools"></i> Skills (with %):</label
+          >
+          <input
+            type="text"
+            id="skills"
+            placeholder="E.g., HTML - 80%, CSS - 70%"
+          />
+        </section>
+        <section>
+          <label for="profile-image"
+            ><i class="fas fa-image"></i> Profile Image:</label
+          >
+          <input
+            type="file"
+            id="profile-image"
+            accept="image/*"
+            onchange="loadImage(event)"
+          />
+        </section>
+        <section>
+          <label for="education"
+            ><i class="fas fa-graduation-cap"></i> Education:</label
+          >
+          <textarea
+            id="education"
+            placeholder="Your Education Details"
+          ></textarea>
+        </section>
+        <section>
+          <label for="experience"
+            ><i class="fas fa-briefcase"></i> Experience:</label
+          >
+          <textarea
+            id="experience"
+            placeholder="Your Work Experience"
+          ></textarea>
+        </section>
+      </form>
+
+      <!-- Button to Update the Resume -->
+      <button id="update-button" onclick="updateResume()">Update Resume</button>
+
+      <!-- Resume Preview -->
+      <div id="resume-preview" class="resume-preview">
+        <!-- This is where the generated resume content will appear. -->
+      </div>
+
+      <!-- Download, Edit, and Generate Link buttons -->
+      <div class="button">
+        <button id="go-back" class="edit">Edit</button>
+        <button onclick="downloadPDF()" class="edit">Download</button>
+        <button id="Linkbtn" class="edit">Generate Link</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2024 Anam Anwer. Student of GIAIC.</p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/anam-anwer-1b82082b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+          class="social-icon"
+          ><i class="fab fa-linkedin"></i> LinkedIn</a
+        >
+        <a href="https://github.com/Anam258" target="_blank" class="social-icon"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a
+          href="https://wa.me/+923343452590"
+          target="_blank"
+          class="social-icon"
+          ><i class="fab fa-whatsapp"></i> WhatsApp</a
+        >
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

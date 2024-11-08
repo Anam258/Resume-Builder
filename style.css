@@ -1,0 +1,359 @@
+/* Global styling */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3f4f6; /* Light gray */
+  background: url("/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Container styling with fade-in animation */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Icon styling */
+label i {
+  margin-right: 8px;
+  color: #3f07ae;
+}
+
+/* Main Heading Styling */
+h1 {
+  font-size: 36px;
+  color: #202082;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+/* Fade-in and pulse animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #183170, 0 0 10px #544caf;
+  }
+  50% {
+    text-shadow: 0 0 20px #442ebb, 0 0 30px #4c6faf;
+  }
+}
+
+/* Label and Input Fields Styling */
+label {
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #2d0d6e;
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: smaller;
+}
+
+/* Button Styling */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: #422c9d;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #3427a7;
+  transform: scale(1.05);
+}
+
+/* Resume Preview Styling */
+.resume-preview {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s;
+}
+
+.resume-preview:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Image Styling */
+#profile-image-container img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+#profile-image-container:hover img {
+  transform: scale(1.1);
+}
+
+.resume-container {
+  display: flex;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Left Column */
+.resume-left {
+  flex: 1;
+  background-color: #1b3a57;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px 0 0 8px;
+  text-align: center;
+}
+
+.resume-left h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.resume-left p.job-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.contact-info p {
+  padding-top: 30px;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: left;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* Right Column */
+.resume-right {
+  flex: 2;
+  padding: 20px;
+}
+
+.resume-right h3 {
+  color: #1b3a57;
+  font-size: 20px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 15px;
+}
+
+.resume-section {
+  margin-top: 15px;
+}
+
+.resume-section h3 {
+  font-size: 18px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Progress Bars for Skills */
+.skill progress {
+  width: 100%;
+  margin-left: 10px;
+  height: 10px;
+  appearance: none;
+  transition: background-color 0.3s;
+}
+
+.skill progress::-webkit-progress-value {
+  background: linear-gradient(to right, #4c6aaf, #4527a7);
+  border-radius: 4px;
+}
+
+.skill progress::-webkit-progress-value {
+  background-color: #3427a7;
+  border-radius: 4px;
+}
+.skill progress {
+  position: relative;
+}
+
+.skill progress::after {
+  content: attr(value) "%";
+  position: absolute;
+  right: 5px;
+  top: -20px;
+  color: #fff;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #f8f9fa99;
+  color: #333333ba;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1 em;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+  }
+
+  .resume-left,
+  .resume-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+h2,
+h3 {
+  font-weight: 600; /* Slightly bolder headings */
+  color: #a2cedf;
+}
+
+p {
+  font-weight: 400; /* Lighter text for readability */
+}
+
+@media print {
+  .resume-preview {
+    background-color: white;
+    color: black;
+  }
+
+  button,
+  .icon,
+  .footer,
+  .container {
+    display: none;
+  }
+}
+@media print {
+  /* Header adjustments */
+  .header,
+  h1 {
+    font-size: 20px; /* Smaller header font */
+    padding: 5px 0; /* Minimal padding */
+    margin: 0; /* No margin to save space */
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Container adjustments */
+  .container,
+  .resume-container {
+    max-width: 100%; /* Utilize full width */
+    padding: 0; /* Remove padding */
+    margin: 0 auto; /* Center the container if needed */
+    border: none; /* Remove any borders */
+    box-shadow: none; /* No shadow for print */
+  }
+
+  /* Adjust overall line height and font size */
+  body,
+  .resume-preview {
+    line-height: 1; /* Reduce line spacing */
+    font-size: 14px; /* Smaller overall font size */
+  }
+}
+@media print {
+  .resume-left .profile-image-container img {
+    width: 50px; /* Smaller image size */
+    height: 50px;
+    margin-bottom: 0; /* Reduce space below image */
+  }
+}
+@media print {
+  .resume-section h2,
+  .resume-section h3 {
+    font-size: 16px; /* Smaller section headings */
+    margin: 5px 0; /* Reduce top/bottom margins */
+  }
+
+  .resume-section p,
+  .resume-right p {
+    margin: 3px 0; /* Less space between paragraphs */
+  }
+
+  .resume-left,
+  .resume-right {
+    padding: 10px; /* Reduce padding in left and right sections */
+  }
+}
+@media print {
+  .resume-container,
+  .resume-section {
+    page-break-inside: avoid; /* Avoid page breaks within sections */
+  }
+}
